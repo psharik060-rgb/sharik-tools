@@ -1,230 +1,227 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Sharik Tools - Free online calculators and useful tools.">
-<title>Sharik Tools - Free Online Tools</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sharik Tools</title>
 
 <style>
-* {
-    box-sizing: border-box;
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#07111f;
+color:#fff;
 }
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #07111f;
-    color: white;
+header{
+position:sticky;
+top:0;
+background:#081522ee;
+padding:16px 6%;
+border-bottom:1px solid #ffffff18;
+z-index:2;
 }
 
-header {
-    background: #0b1828;
-    border-bottom: 1px solid #ffffff20;
-    padding: 18px 6%;
-    position: sticky;
-    top: 0;
-    z-index: 10;
+.nav{
+max-width:1100px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
 
-.nav {
-    max-width: 1100px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.logo{
+font-size:25px;
+font-weight:800;
 }
 
-.logo {
-    font-size: 25px;
-    font-weight: bold;
+.logo span,.blue{
+color:#4de1ff;
 }
 
-.logo span {
-    color: #4de1ff;
+nav a{
+color:#b9c9d8;
+text-decoration:none;
+margin-left:20px;
 }
 
-nav a {
-    color: #b9c9d8;
-    text-decoration: none;
-    margin-left: 20px;
+.hero{
+text-align:center;
+padding:65px 20px 35px;
 }
 
-.hero {
-    text-align: center;
-    padding: 80px 20px 50px;
+.badge{
+display:inline-block;
+padding:8px 14px;
+border:1px solid #4de1ff66;
+border-radius:30px;
+color:#4de1ff;
 }
 
-.badge {
-    display: inline-block;
-    padding: 8px 15px;
-    border: 1px solid #4de1ff66;
-    border-radius: 30px;
-    color: #4de1ff;
+h1{
+font-size:clamp(42px,7vw,68px);
+margin:20px 0 12px;
 }
 
-h1 {
-    font-size: 60px;
-    margin: 20px 0;
+.hero p{
+color:#aabbd0;
+max-width:680px;
+margin:auto;
+line-height:1.6;
 }
 
-.hero h1 span {
-    color: #4de1ff;
+.search{
+margin-top:25px;
+width:min(650px,95%);
+padding:15px;
+border-radius:14px;
+border:1px solid #ffffff20;
+background:#0d1c2e;
+color:#fff;
+font-size:16px;
 }
 
-.hero p {
-    color: #aabbd0;
-    font-size: 18px;
-    max-width: 650px;
-    margin: auto;
-    line-height: 1.6;
+.grid{
+max-width:1100px;
+margin:20px auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:18px;
+padding:20px;
 }
 
-.search {
-    margin-top: 30px;
-    width: min(650px, 95%);
-    padding: 16px;
-    border-radius: 14px;
-    border: 1px solid #ffffff20;
-    background: #0d1c2e;
-    color: white;
-    font-size: 16px;
-    outline: none;
+.card,.box{
+background:#0c1a2b;
+border:1px solid #ffffff15;
+border-radius:20px;
+padding:22px;
 }
 
-main {
-    max-width: 1100px;
-    margin: auto;
-    padding: 20px;
+.icon{
+font-size:32px;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px;
+.tag{
+font-size:11px;
+color:#4de1ff;
 }
 
-.card {
-    background: #0c1a2b;
-    border: 1px solid #ffffff15;
-    border-radius: 20px;
-    padding: 25px;
-    transition: 0.3s;
+.card p{
+color:#9db0c4;
+line-height:1.5;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    border-color: #4de1ff66;
+.btn,button{
+display:inline-block;
+margin-top:8px;
+padding:11px 15px;
+border:0;
+border-radius:10px;
+background:#4de1ff;
+color:#06111c;
+text-decoration:none;
+font-weight:bold;
+cursor:pointer;
 }
 
-.icon {
-    font-size: 35px;
+.section{
+max-width:600px;
+margin:55px auto;
+padding:0 20px;
 }
 
-.card h3 {
-    margin-bottom: 8px;
+.box h2{
+text-align:center;
 }
 
-.card p {
-    color: #9db0c4;
-    line-height: 1.5;
+.row{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
 }
 
-.tag {
-    color: #4de1ff;
-    font-size: 12px;
+input{
+width:100%;
+padding:13px;
+margin:6px 0 12px;
+border:1px solid #ffffff18;
+border-radius:10px;
+background:#07111f;
+color:#fff;
 }
 
-.btn {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 11px 16px;
-    border-radius: 10px;
-    background: #4de1ff;
-    color: #06111c;
-    text-decoration: none;
-    font-weight: bold;
+.result{
+margin-top:15px;
+padding:15px;
+background:#07111f;
+border-radius:12px;
+line-height:1.7;
 }
 
-.calculator {
-    max-width: 430px;
-    margin: 60px auto;
-    padding: 25px;
-    background: #0b1828;
-    border: 1px solid #ffffff18;
-    border-radius: 25px;
+.calc{
+max-width:430px;
+margin:55px auto;
+padding:22px;
+background:#0c1a2b;
+border-radius:22px;
 }
 
-.calculator h2 {
-    text-align: center;
+.display{
+width:100%;
+height:70px;
+margin:10px 0 15px;
+background:#020912;
+color:#fff;
+border:0;
+border-radius:14px;
+text-align:right;
+font-size:30px;
+padding:12px;
 }
 
-.display {
-    width: 100%;
-    height: 70px;
-    margin: 15px 0;
-    border: none;
-    border-radius: 15px;
-    background: #020912;
-    color: white;
-    font-size: 30px;
-    text-align: right;
-    padding: 15px;
+.keys{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:10px;
 }
 
-.keys {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+.keys button{
+height:55px;
+background:#14263a;
+color:#fff;
+font-size:19px;
 }
 
-.keys button {
-    height: 58px;
-    border: none;
-    border-radius: 13px;
-    background: #14263a;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
+.keys .op{
+background:#16445a;
 }
 
-.keys button:hover {
-    filter: brightness(1.3);
+.keys .eq{
+background:#4de1ff;
+color:#06111c;
 }
 
-.keys .operator {
-    background: #16445a;
+.wide{
+grid-column:span 2;
 }
 
-.keys .equal {
-    background: #4de1ff;
-    color: #06111c;
+footer{
+text-align:center;
+padding:35px;
+color:#71869b;
+border-top:1px solid #ffffff15;
 }
 
-.wide {
-    grid-column: span 2;
+.hidden{
+display:none;
 }
 
-footer {
-    text-align: center;
-    padding: 40px 20px;
-    color: #71869b;
-    border-top: 1px solid #ffffff15;
-    margin-top: 30px;
+@media(max-width:600px){
+.row{
+grid-template-columns:1fr;
 }
-
-.hidden {
-    display: none;
-}
-
-@media (max-width: 600px) {
-    h1 {
-        font-size: 42px;
-    }
-
-    nav a {
-        margin-left: 10px;
-    }
 }
 </style>
 </head>
@@ -232,252 +229,402 @@ footer {
 <body>
 
 <header>
-    <div class="nav">
-        <div class="logo">
-            Sharik <span>Tools</span>
-        </div>
+<div class="nav">
+<div class="logo">Sharik <span>Tools</span></div>
 
-        <nav>
-            <a href="#tools">Tools</a>
-            <a href="#calculator">Calculator</a>
-        </nav>
-    </div>
+<nav>
+<a href="#tools">Tools</a>
+<a href="#calculator">Calculator</a>
+</nav>
+
+</div>
 </header>
+
 
 <section class="hero">
 
-    <div class="badge">
-        FREE • FAST • USEFUL
-    </div>
-
-    <h1>
-        Powerful Tools.<br>
-        <span>Made Simple.</span>
-    </h1>
-
-    <p>
-        Welcome to Sharik Tools — useful online calculators
-        and tools in one fast and modern website.
-    </p>
-
-    <input
-        id="search"
-        class="search"
-        type="text"
-        placeholder="Search tools..."
-        oninput="searchTools()"
-    >
-
-</section>
-
-<main>
-
-<section id="tools">
-
-<div class="grid" id="toolGrid">
-
-<div class="card tool" data-name="calculator">
-    <div class="icon">🧮</div>
-    <div class="tag">AVAILABLE</div>
-    <h3>Smart Calculator</h3>
-    <p>
-        Fast calculator for everyday mathematical calculations.
-    </p>
-    <a class="btn" href="#calculator">
-        Open Calculator
-    </a>
+<div class="badge">
+FREE • FAST • USEFUL
 </div>
 
-<div class="card tool" data-name="emi loan calculator">
-    <div class="icon">💰</div>
-    <div class="tag">COMING SOON</div>
-    <h3>EMI Calculator</h3>
-    <p>
-        Calculate monthly loan EMI, interest and total payment.
-    </p>
-</div>
+<h1>
+Powerful Tools.<br>
+<span class="blue">Made Simple.</span>
+</h1>
 
-<div class="card tool" data-name="gst tax calculator">
-    <div class="icon">🧾</div>
-    <div class="tag">COMING SOON</div>
-    <h3>GST Calculator</h3>
-    <p>
-        Calculate GST amount and final price quickly.
-    </p>
-</div>
-
-<div class="card tool" data-name="percentage calculator">
-    <div class="icon">📊</div>
-    <div class="tag">COMING SOON</div>
-    <h3>Percentage Calculator</h3>
-    <p>
-        Calculate percentage, increase, decrease and difference.
-    </p>
-</div>
-
-<div class="card tool" data-name="age calculator">
-    <div class="icon">🎂</div>
-    <div class="tag">COMING SOON</div>
-    <h3>Age Calculator</h3>
-    <p>
-        Calculate exact age from date of birth.
-    </p>
-</div>
-
-<div class="card tool" data-name="qr code generator">
-    <div class="icon">📱</div>
-    <div class="tag">COMING SOON</div>
-    <h3>QR Code Generator</h3>
-    <p>
-        Generate useful QR codes online.
-    </p>
-</div>
-
-</div>
-
-</section>
-
-<section id="calculator" class="calculator">
-
-<h2>Sharik Calculator</h2>
+<p>
+Free online calculators and useful tools for everyday work,
+finance and business.
+</p>
 
 <input
-    id="display"
-    class="display"
-    value="0"
-    readonly
+id="search"
+class="search"
+placeholder="Search tools..."
+oninput="searchTools()"
+>
+
+</section>
+
+
+<main id="tools" class="grid">
+
+<div class="card tool" data-name="calculator">
+
+<div class="icon">🧮</div>
+
+<span class="tag">WORKING</span>
+
+<h3>Smart Calculator</h3>
+
+<p>Fast everyday calculations.</p>
+
+<a class="btn" href="#calculator">Open</a>
+
+</div>
+
+
+<div class="card tool" data-name="emi loan">
+
+<div class="icon">💰</div>
+
+<span class="tag">WORKING</span>
+
+<h3>EMI Calculator</h3>
+
+<p>Monthly EMI, interest and total payment.</p>
+
+<a class="btn" href="#emi">Open</a>
+
+</div>
+
+
+<div class="card tool" data-name="gst tax">
+
+<div class="icon">🧾</div>
+
+<span class="tag">WORKING</span>
+
+<h3>GST Calculator</h3>
+
+<p>GST amount and final price.</p>
+
+<a class="btn" href="#gst">Open</a>
+
+</div>
+
+
+<div class="card tool" data-name="percentage percent">
+
+<div class="icon">📊</div>
+
+<span class="tag">WORKING</span>
+
+<h3>Percentage Calculator</h3>
+
+<p>Find a percentage of a number.</p>
+
+<a class="btn" href="#percentage">Open</a>
+
+</div>
+
+
+<div class="card tool" data-name="age">
+
+<div class="icon">🎂</div>
+
+<span class="tag">NEXT</span>
+
+<h3>Age Calculator</h3>
+
+<p>Coming next.</p>
+
+</div>
+
+
+<div class="card tool" data-name="qr">
+
+<div class="icon">📱</div>
+
+<span class="tag">NEXT</span>
+
+<h3>QR Generator</h3>
+
+<p>Coming next.</p>
+
+</div>
+
+</main>
+
+
+<section id="calculator" class="calc">
+
+<h2>🧮 Sharik Calculator</h2>
+
+<input
+id="display"
+class="display"
+value="0"
+readonly
 >
 
 <div class="keys">
 
-<button onclick="clearDisplay()">AC</button>
-<button onclick="deleteLast()">⌫</button>
-<button onclick="addValue('%')">%</button>
-<button class="operator" onclick="addValue('/')">÷</button>
+<button onclick="add('7')">7</button>
+<button onclick="add('8')">8</button>
+<button onclick="add('9')">9</button>
+<button class="op" onclick="add('/')">÷</button>
 
-<button onclick="addValue('7')">7</button>
-<button onclick="addValue('8')">8</button>
-<button onclick="addValue('9')">9</button>
-<button class="operator" onclick="addValue('*')">×</button>
+<button onclick="add('4')">4</button>
+<button onclick="add('5')">5</button>
+<button onclick="add('6')">6</button>
+<button class="op" onclick="add('*')">×</button>
 
-<button onclick="addValue('4')">4</button>
-<button onclick="addValue('5')">5</button>
-<button onclick="addValue('6')">6</button>
-<button class="operator" onclick="addValue('-')">−</button>
+<button onclick="add('1')">1</button>
+<button onclick="add('2')">2</button>
+<button onclick="add('3')">3</button>
+<button class="op" onclick="add('-')">−</button>
 
-<button onclick="addValue('1')">1</button>
-<button onclick="addValue('2')">2</button>
-<button onclick="addValue('3')">3</button>
-<button class="operator" onclick="addValue('+')">+</button>
+<button class="wide" onclick="add('0')">0</button>
+<button onclick="add('.')">.</button>
+<button class="eq" onclick="calc()">=</button>
 
-<button class="wide" onclick="addValue('0')">0</button>
-<button onclick="addValue('.')">.</button>
-<button class="equal" onclick="calculate()">=</button>
+<button onclick="clearC()">AC</button>
+<button onclick="delC()">⌫</button>
+<button onclick="add('%')">%</button>
+<button class="op" onclick="add('+')">+</button>
+
+</div>
+</section>
+
+
+<section id="emi" class="section">
+
+<div class="box">
+
+<h2>💰 EMI Calculator</h2>
+
+<div class="row">
+
+<label>
+Loan Amount ₹
+<input id="loan" type="number" placeholder="500000">
+</label>
+
+<label>
+Interest %
+<input id="rate" type="number" step=".01" placeholder="10">
+</label>
 
 </div>
 
+<label>
+Tenure (months)
+<input id="months" type="number" placeholder="60">
+</label>
+
+<button onclick="emi()">
+Calculate EMI
+</button>
+
+<div id="er" class="result">
+Enter values.
+</div>
+
+</div>
 </section>
 
-</main>
+
+<section id="gst" class="section">
+
+<div class="box">
+
+<h2>🧾 GST Calculator</h2>
+
+<div class="row">
+
+<label>
+Amount ₹
+<input id="ga" type="number" placeholder="1000">
+</label>
+
+<label>
+GST %
+<input id="gr" type="number" placeholder="18">
+</label>
+
+</div>
+
+<button onclick="gst()">
+Calculate GST
+</button>
+
+<div id="gresult" class="result">
+Enter values.
+</div>
+
+</div>
+</section>
+
+
+<section id="percentage" class="section">
+
+<div class="box">
+
+<h2>📊 Percentage Calculator</h2>
+
+<div class="row">
+
+<label>
+Percentage %
+<input id="pp" type="number" placeholder="20">
+</label>
+
+<label>
+Number
+<input id="pn" type="number" placeholder="500">
+</label>
+
+</div>
+
+<button onclick="pct()">
+Calculate
+</button>
+
+<div id="pr" class="result">
+Enter values.
+</div>
+
+</div>
+</section>
+
 
 <footer>
-    © 2026 Sharik Tools • Free Online Tools
+© 2026 Sharik Tools • Free Online Tools
 </footer>
+
 
 <script>
 
-const display = document.getElementById("display");
+const d=document.getElementById('display');
 
-function addValue(value) {
+function add(v){
 
-    if (
-        display.value === "0" ||
-        display.value === "Error"
-    ) {
-        display.value = value;
-    } else {
-        display.value += value;
-    }
+if(d.value==='0'||d.value==='Error')
+d.value=v;
+
+else
+d.value+=v;
+
 }
 
-function clearDisplay() {
-    display.value = "0";
+
+function clearC(){
+d.value='0';
 }
 
-function deleteLast() {
 
-    display.value =
-        display.value.slice(0, -1) || "0";
+function delC(){
+d.value=d.value.slice(0,-1)||'0';
 }
 
-function calculate() {
 
-    try {
+function calc(){
 
-        let expression =
-            display.value.replace(/%/g, "/100");
+try{
 
-        display.value =
-            Function(
-                '"use strict"; return (' +
-                expression +
-                ')'
-            )();
+d.value=Function(
+'return '+d.value.replace(/%/g,'/100')
+)();
 
-    } catch {
-
-        display.value = "Error";
-
-    }
 }
 
-function searchTools() {
+catch(e){
 
-    const query =
-        document.getElementById("search")
-        .value
-        .toLowerCase();
+d.value='Error';
 
-    document
-        .querySelectorAll(".tool")
-        .forEach(function(card) {
-
-            const name =
-                card.dataset.name;
-
-            if (name.includes(query)) {
-                card.classList.remove("hidden");
-            } else {
-                card.classList.add("hidden");
-            }
-
-        });
 }
 
-document.addEventListener(
-    "keydown",
-    function(event) {
+}
 
-        if (
-            /[0-9.+\-*/%]/.test(event.key)
-        ) {
-            addValue(event.key);
-        }
 
-        if (event.key === "Enter") {
-            calculate();
-        }
+function emi(){
 
-        if (event.key === "Backspace") {
-            deleteLast();
-        }
+let P=+loan.value;
+let r=+rate.value/1200;
+let n=+months.value;
 
-        if (event.key === "Escape") {
-            clearDisplay();
-        }
+if(!P||!n){
 
-    }
+er.textContent='Please enter values.';
+return;
+
+}
+
+let e=r
+?P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1)
+:P/n;
+
+er.innerHTML=
+`Monthly EMI: <b>₹${e.toFixed(2)}</b>
+<br>
+Total Payment: ₹${(e*n).toFixed(2)}
+<br>
+Total Interest: ₹${(e*n-P).toFixed(2)}`;
+
+}
+
+
+function gst(){
+
+let a=+ga.value;
+let r=+gr.value;
+let t=a*r/100;
+
+gresult.innerHTML=
+`GST: <b>₹${t.toFixed(2)}</b>
+<br>
+Final Amount: <b>₹${(a+t).toFixed(2)}</b>`;
+
+}
+
+
+function pct(){
+
+pr.innerHTML=
+`Result: <b>${(+pp.value*+pn.value/100).toFixed(2)}</b>`;
+
+}
+
+
+function searchTools(){
+
+let q=search.value.toLowerCase();
+
+document.querySelectorAll('.tool').forEach(x=>{
+
+x.classList.toggle(
+'hidden',
+!x.dataset.name.includes(q)
 );
+
+});
+
+}
+
+
+document.addEventListener('keydown',e=>{
+
+if(/[0-9.+\-*/%]/.test(e.key))
+add(e.key);
+
+if(e.key==='Enter')
+calc();
+
+if(e.key==='Backspace')
+delC();
+
+});
 
 </script>
 
