@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sharik Tools - Free online calculators and useful tools.">
+<title>Sharik Tools - Free Online Tools</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #07111f;
+    color: white;
+}
+
+header {
+    background: #0b1828;
+    border-bottom: 1px solid #ffffff20;
+    padding: 18px 6%;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.nav {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #4de1ff;
+}
+
+nav a {
+    color: #b9c9d8;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.hero {
+    text-align: center;
+    padding: 80px 20px 50px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 8px 15px;
+    border: 1px solid #4de1ff66;
+    border-radius: 30px;
+    color: #4de1ff;
+}
+
+h1 {
+    font-size: 60px;
+    margin: 20px 0;
+}
+
+.hero h1 span {
+    color: #4de1ff;
+}
+
+.hero p {
+    color: #aabbd0;
+    font-size: 18px;
+    max-width: 650px;
+    margin: auto;
+    line-height: 1.6;
+}
+
+.search {
+    margin-top: 30px;
+    width: min(650px, 95%);
+    padding: 16px;
+    border-radius: 14px;
+    border: 1px solid #ffffff20;
+    background: #0d1c2e;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+
+main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #0c1a2b;
+    border: 1px solid #ffffff15;
+    border-radius: 20px;
+    padding: 25px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #4de1ff66;
+}
+
+.icon {
+    font-size: 35px;
+}
+
+.card h3 {
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: #9db0c4;
+    line-height: 1.5;
+}
+
+.tag {
+    color: #4de1ff;
+    font-size: 12px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 11px 16px;
+    border-radius: 10px;
+    background: #4de1ff;
+    color: #06111c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.calculator {
+    max-width: 430px;
+    margin: 60px auto;
+    padding: 25px;
+    background: #0b1828;
+    border: 1px solid #ffffff18;
+    border-radius: 25px;
+}
+
+.calculator h2 {
+    text-align: center;
+}
+
+.display {
+    width: 100%;
+    height: 70px;
+    margin: 15px 0;
+    border: none;
+    border-radius: 15px;
+    background: #020912;
+    color: white;
+    font-size: 30px;
+    text-align: right;
+    padding: 15px;
+}
+
+.keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.keys button {
+    height: 58px;
+    border: none;
+    border-radius: 13px;
+    background: #14263a;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.keys button:hover {
+    filter: brightness(1.3);
+}
+
+.keys .operator {
+    background: #16445a;
+}
+
+.keys .equal {
+    background: #4de1ff;
+    color: #06111c;
+}
+
+.wide {
+    grid-column: span 2;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #71869b;
+    border-top: 1px solid #ffffff15;
+    margin-top: 30px;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 42px;
+    }
+
+    nav a {
+        margin-left: 10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="nav">
+        <div class="logo">
+            Sharik <span>Tools</span>
+        </div>
+
+        <nav>
+            <a href="#tools">Tools</a>
+            <a href="#calculator">Calculator</a>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+
+    <div class="badge">
+        FREE • FAST • USEFUL
+    </div>
+
+    <h1>
+        Powerful Tools.<br>
+        <span>Made Simple.</span>
+    </h1>
+
+    <p>
+        Welcome to Sharik Tools — useful online calculators
+        and tools in one fast and modern website.
+    </p>
+
+    <input
+        id="search"
+        class="search"
+        type="text"
+        placeholder="Search tools..."
+        oninput="searchTools()"
+    >
+
+</section>
+
+<main>
+
+<section id="tools">
+
+<div class="grid" id="toolGrid">
+
+<div class="card tool" data-name="calculator">
+    <div class="icon">🧮</div>
+    <div class="tag">AVAILABLE</div>
+    <h3>Smart Calculator</h3>
+    <p>
+        Fast calculator for everyday mathematical calculations.
+    </p>
+    <a class="btn" href="#calculator">
+        Open Calculator
+    </a>
+</div>
+
+<div class="card tool" data-name="emi loan calculator">
+    <div class="icon">💰</div>
+    <div class="tag">COMING SOON</div>
+    <h3>EMI Calculator</h3>
+    <p>
+        Calculate monthly loan EMI, interest and total payment.
+    </p>
+</div>
+
+<div class="card tool" data-name="gst tax calculator">
+    <div class="icon">🧾</div>
+    <div class="tag">COMING SOON</div>
+    <h3>GST Calculator</h3>
+    <p>
+        Calculate GST amount and final price quickly.
+    </p>
+</div>
+
+<div class="card tool" data-name="percentage calculator">
+    <div class="icon">📊</div>
+    <div class="tag">COMING SOON</div>
+    <h3>Percentage Calculator</h3>
+    <p>
+        Calculate percentage, increase, decrease and difference.
+    </p>
+</div>
+
+<div class="card tool" data-name="age calculator">
+    <div class="icon">🎂</div>
+    <div class="tag">COMING SOON</div>
+    <h3>Age Calculator</h3>
+    <p>
+        Calculate exact age from date of birth.
+    </p>
+</div>
+
+<div class="card tool" data-name="qr code generator">
+    <div class="icon">📱</div>
+    <div class="tag">COMING SOON</div>
+    <h3>QR Code Generator</h3>
+    <p>
+        Generate useful QR codes online.
+    </p>
+</div>
+
+</div>
+
+</section>
+
+<section id="calculator" class="calculator">
+
+<h2>Sharik Calculator</h2>
+
+<input
+    id="display"
+    class="display"
+    value="0"
+    readonly
+>
+
+<div class="keys">
+
+<button onclick="clearDisplay()">AC</button>
+<button onclick="deleteLast()">⌫</button>
+<button onclick="addValue('%')">%</button>
+<button class="operator" onclick="addValue('/')">÷</button>
+
+<button onclick="addValue('7')">7</button>
+<button onclick="addValue('8')">8</button>
+<button onclick="addValue('9')">9</button>
+<button class="operator" onclick="addValue('*')">×</button>
+
+<button onclick="addValue('4')">4</button>
+<button onclick="addValue('5')">5</button>
+<button onclick="addValue('6')">6</button>
+<button class="operator" onclick="addValue('-')">−</button>
+
+<button onclick="addValue('1')">1</button>
+<button onclick="addValue('2')">2</button>
+<button onclick="addValue('3')">3</button>
+<button class="operator" onclick="addValue('+')">+</button>
+
+<button class="wide" onclick="addValue('0')">0</button>
+<button onclick="addValue('.')">.</button>
+<button class="equal" onclick="calculate()">=</button>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+    © 2026 Sharik Tools • Free Online Tools
+</footer>
+
+<script>
+
+const display = document.getElementById("display");
+
+function addValue(value) {
+
+    if (
+        display.value === "0" ||
+        display.value === "Error"
+    ) {
+        display.value = value;
+    } else {
+        display.value += value;
+    }
+}
+
+function clearDisplay() {
+    display.value = "0";
+}
+
+function deleteLast() {
+
+    display.value =
+        display.value.slice(0, -1) || "0";
+}
+
+function calculate() {
+
+    try {
+
+        let expression =
+            display.value.replace(/%/g, "/100");
+
+        display.value =
+            Function(
+                '"use strict"; return (' +
+                expression +
+                ')'
+            )();
+
+    } catch {
+
+        display.value = "Error";
+
+    }
+}
+
+function searchTools() {
+
+    const query =
+        document.getElementById("search")
+        .value
+        .toLowerCase();
+
+    document
+        .querySelectorAll(".tool")
+        .forEach(function(card) {
+
+            const name =
+                card.dataset.name;
+
+            if (name.includes(query)) {
+                card.classList.remove("hidden");
+            } else {
+                card.classList.add("hidden");
+            }
+
+        });
+}
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            /[0-9.+\-*/%]/.test(event.key)
+        ) {
+            addValue(event.key);
+        }
+
+        if (event.key === "Enter") {
+            calculate();
+        }
+
+        if (event.key === "Backspace") {
+            deleteLast();
+        }
+
+        if (event.key === "Escape") {
+            clearDisplay();
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
