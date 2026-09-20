@@ -7,7 +7,117 @@
 
 <style>
 *{box-sizing:border-box}
+<!-- Sharik Tools - Age Calculator -->
+<div id="ageCalculator" style="
+    max-width:500px;
+    margin:30px auto;
+    padding:25px;
+    background:#111827;
+    border:1px solid #374151;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+    color:white;
+    font-family:Arial,sans-serif;
+">
+    <h2 style="text-align:center;margin-top:0;">
+        🎂 Age Calculator
+    </h2>
 
+    <p style="text-align:center;color:#9ca3af;">
+        Apni Date of Birth select karein
+    </p>
+
+    <label>Date of Birth</label>
+
+    <input
+        type="date"
+        id="sharikDob"
+        style="
+            width:100%;
+            padding:13px;
+            margin:10px 0 15px;
+            border-radius:10px;
+            border:1px solid #4b5563;
+            background:#1f2937;
+            color:white;
+            font-size:16px;
+        "
+    >
+
+    <button
+        onclick="calculateSharikAge()"
+        style="
+            width:100%;
+            padding:14px;
+            border:none;
+            border-radius:10px;
+            background:#2563eb;
+            color:white;
+            font-size:17px;
+            font-weight:bold;
+            cursor:pointer;
+        "
+    >
+        Calculate Age
+    </button>
+
+    <div
+        id="sharikAgeResult"
+        style="
+            margin-top:20px;
+            text-align:center;
+            font-size:18px;
+            line-height:1.8;
+        "
+    ></div>
+</div>
+
+<script>
+function calculateSharikAge() {
+
+    const dobInput = document.getElementById("sharikDob");
+    const result = document.getElementById("sharikAgeResult");
+
+    if (!dobInput.value) {
+        result.innerHTML = "⚠️ Pehle Date of Birth select karein.";
+        return;
+    }
+
+    const dob = new Date(dobInput.value + "T00:00:00");
+    const today = new Date();
+
+    if (dob > today) {
+        result.innerHTML = "⚠️ Date of Birth future mein nahi ho sakti.";
+        return;
+    }
+
+    let years = today.getFullYear() - dob.getFullYear();
+    let months = today.getMonth() - dob.getMonth();
+    let days = today.getDate() - dob.getDate();
+
+    if (days < 0) {
+        months--;
+        const previousMonth = new Date(
+            today.getFullYear(),
+            today.getMonth(),
+            0
+        );
+        days += previousMonth.getDate();
+    }
+
+    if (months < 0) {
+        years--;
+        months += 12;
+    }
+
+    result.innerHTML = `
+        🎉 <b>Your Age</b><br>
+        <span style="font-size:22px;">
+            ${years} Years, ${months} Months, ${days} Days
+        </span>
+    `;
+}
+</script>
 body{
 margin:0;
 font-family:Arial,sans-serif;
